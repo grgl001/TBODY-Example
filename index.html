@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center" id="n">Список Группы</h1>
+                </div>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Возраст</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <form>
+            <div class="form-group">
+                <input class="form-control" id="name" placeholder="Имя">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="mail" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="age" placeholder="Возраст">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="addRow();">добавить</button>
+        </form>  
+    </main>
+
+</body>
+<script>
+    
+    function addRow() {
+        let tbody = document.getElementById("tbody")[0];
+        let row = document.createElement("TR");
+
+        let Name = document.createElement("TD");
+        let Email = document.createElement("TD");
+        let Age = document.createElement("TD");
+
+        Name.innerHTML = document.getElementById("name");
+        Email.innerHTML = document.getElementById("mail");
+        Age.innerHTML = document.getElementById("age");
+
+        row.append(Name);
+        row.append(Email);
+        row.append(Age);
+        tbody.append(row);
+    }
+</script>
+</html>
